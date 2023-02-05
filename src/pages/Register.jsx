@@ -37,12 +37,12 @@ function Register() {
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
           await updateProfile(res.user, {
-            displayName,
+            displayName: displayName.toLowerCase(),
             photoURL: downloadURL,
           });
           await setDoc(doc(db, "users", res.user.uid), {
             uid: res.user.uid,
-            displayName,
+            displayName: displayName.toLowerCase(),
             email,
             photoURL: downloadURL,
           });
