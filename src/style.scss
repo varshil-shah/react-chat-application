@@ -160,6 +160,14 @@
       .search {
         border-bottom: 1px solid gray;
 
+        .error-msg {
+          color: #ddddf7;
+          font-size: 14px;
+          text-align: center;
+          padding: 5px;
+          background-color: #2d2f52;
+        }
+
         .searchForm {
           padding: 10px;
 
