@@ -69,7 +69,7 @@ function Register() {
         <span className="logo">संदेश</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="Display name" />
+          <input required type="text" placeholder="Enter username" />
           <input required type="email" placeholder="Email address" />
           <input required type="password" placeholder="Strong password" />
           <input style={{ display: "none" }} type="file" id="file" />
