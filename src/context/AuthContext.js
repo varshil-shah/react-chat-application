@@ -12,9 +12,7 @@ export const AuthContextProvider = ({ children }) => {
       setCurrentUser(user);
     });
 
-    return () => {
-      unsub();
-    };
+    return unsub;
   }, []);
 
   return (
