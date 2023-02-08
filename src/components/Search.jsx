@@ -12,12 +12,15 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
 
 const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const { dispatch } = useContext(ChatContext);
 
   const { currentUser } = useContext(AuthContext);
 
@@ -86,6 +89,8 @@ const Search = () => {
     // Create user chats
     setUser(null);
     setUsername("");
+
+    dispatch({ type: "CHANGE_USER", payload: user });
   };
 
   return (
